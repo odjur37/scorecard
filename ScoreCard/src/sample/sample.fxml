@@ -1,0 +1,56 @@
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.geometry.Insets?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <padding>
+        <Insets top="10" left="25" right="25" bottom="10"/>
+    </padding>
+    <top>
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets top="10" left="25" right="25" bottom="10"/>
+            </padding>
+            <Label text="Score">
+                <font>
+                    <Font name="Calibri bold" size="18"/>
+                </font>
+            </Label>
+            <Slider minorTickCount="0" majorTickUnit="1" snapToTicks="true" showTickLabels="true" min="1" max="8"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox>
+            <padding>
+                <Insets top="10" left="25" right="25" bottom="10"/>
+            </padding>
+            <HBox>
+                <Label text="FW">
+                    <padding>
+                        <Insets right="30"/>
+                    </padding>
+                    <font>
+                        <Font name="Calibri bold" size="24"/>
+                    </font>
+                </Label>
+                <CheckBox text="Y">
+                    <padding>
+                        <Insets right="30" top="20"/>
+                    </padding>
+                </CheckBox>
+                <CheckBox text="N">
+                    <padding>
+                        <Insets top="20"/>
+                    </padding>
+                </CheckBox>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
