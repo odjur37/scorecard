@@ -1,71 +1,81 @@
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.CheckBox?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.GridPane?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10" gridLinesVisible="true" alignment="CENTER">
-    <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER" GridPane.columnSpan="2">
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" gridLinesVisible="true" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="sample.Controller">
+    <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
 
         <Label text="Score">
             <font>
-                <Font name="Calibri bold" size="18"/>
+                <Font name="Calibri bold" size="18" />
             </font>
         </Label>
 
-        <Slider minorTickCount="0" majorTickUnit="1" snapToTicks="true" showTickLabels="true" min="1" max="8"/>
+        <Slider majorTickUnit="1" max="8" min="1" minorTickCount="0" showTickLabels="true" snapToTicks="true" />
 
     </VBox>
 
-    <VBox GridPane.rowIndex="1" GridPane.columnIndex="0">
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1">
         <HBox>
             <Label text="FW">
                 <font>
-                    <Font name="Calibri bold" size="24"/>
+                    <Font name="Calibri bold" size="24" />
                 </font>
             </Label>
         </HBox>
     </VBox>
 
-    <HBox GridPane.rowIndex="1" GridPane.columnIndex="1">
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
         <CheckBox text="Y">
             <padding>
-                <Insets left="10"/>
+                <Insets left="10" />
             </padding>
         </CheckBox>
 
         <CheckBox text="N">
             <padding>
-                <Insets left="10"/>
+                <Insets left="10" />
             </padding>
         </CheckBox>
     </HBox>
 
-    <VBox GridPane.rowIndex="2" GridPane.columnIndex="0">
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="2">
         <HBox>
             <Label text="Green">
                 <font>
-                    <Font name="Calibri bold" size="24"/>
+                    <Font name="Calibri bold" size="24" />
                 </font>
             </Label>
         </HBox>
     </VBox>
 
-    <HBox GridPane.rowIndex="2" GridPane.columnIndex="1">
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
         <CheckBox text="Y">
             <padding>
-                <Insets left="10"/>
+                <Insets left="10" />
             </padding>
         </CheckBox>
 
         <CheckBox text="N">
             <padding>
-                <Insets left="10"/>
+                <Insets left="10" />
             </padding>
         </CheckBox>
     </HBox>
 
+    <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+        <Label text="Putts">
+            <font>
+                <Font name="Calibri bold" size="18" />
+            </font>
+        </Label>
+        <Slider prefWidth="100" majorTickUnit="1" max="4" min="1" minorTickCount="0" showTickLabels="true" snapToTicks="true" />
+    </VBox>
 </GridPane>
