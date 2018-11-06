@@ -1,4 +1,4 @@
-package sample;
+package com.erik.scorecard;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,16 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ResourceBundle;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setResources(ResourceBundle.getBundle("com.erik.scorecard.application"));
+        Parent root = fxmlLoader.load(getClass().getResourceAsStream("mainwindow.fxml"));
+        primaryStage.setTitle("ScoreCard");
         primaryStage.setScene(new Scene(root, 300, 500));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

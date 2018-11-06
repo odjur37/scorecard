@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.erik.scorecard.Controller">
+
+    <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="%columnSpanAll">
+
+        <Label text="Score">
+            <font>
+                <Font name="Calibri bold" size="18" />
+            </font>
+        </Label>
+
+        <Slider fx:id="scoreSlider" majorTickUnit="1" max="8" min="1" minorTickCount="0" showTickLabels="true" snapToTicks="true" />
+
+    </VBox>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="%columnSpanAll">
+        <padding>
+            <Insets left="17"/>
+        </padding>
+        <CheckBox fx:id="fairwayBox" onAction="#updateFairway" text="FW">
+            <font>
+                <Font name="Calibri bold" size="24" />
+            </font>
+        </CheckBox>
+    </HBox>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="%columnSpanAll">
+        <padding>
+            <Insets left="17"/>
+        </padding>
+        <CheckBox fx:id="greenBox" onAction="#updateGreen" text="Green">
+            <font>
+                <Font name="Calibri bold" size="24" />
+            </font>
+        </CheckBox>
+    </HBox>
+
+    <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="%columnSpanAll">
+        <Label text="Putts">
+            <font>
+                <Font name="Calibri bold" size="18" />
+            </font>
+        </Label>
+        <Slider fx:id="puttSlider" prefWidth="100" majorTickUnit="1" max="4" min="1" minorTickCount="0" showTickLabels="true" snapToTicks="true" />
+    </VBox>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="%columnSpanAll">
+        <padding>
+            <Insets left="17"/>
+        </padding>
+        <CheckBox fx:id="upndBox" onAction="#updateUpnd" text="UPND">
+            <font>
+                <Font name="Calibri bold" size="24" />
+            </font>
+        </CheckBox>
+    </HBox>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="5" alignment="CENTER_LEFT">
+        <Button text="&lt;--"/>
+    </HBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="5" alignment="CENTER">
+        <Label text="HOLE X">
+            <font>
+                <Font name="Calibri bold" size="18"/>
+            </font>
+        </Label>
+    </HBox>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="5" alignment="CENTER_RIGHT">
+        <Button text="--&gt;"/>
+    </HBox>
+
+</GridPane>
