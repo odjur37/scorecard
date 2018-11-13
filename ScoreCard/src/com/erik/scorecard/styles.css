@@ -1,0 +1,22 @@
+.root{
+    -fx-background-image: url(grass.jpg);
+}
+
+#smallText {
+   -fx-font-size: 24px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+.slider .axis{
+    -fx-tick-label-font-size: 24px;
+    -fx-tick-label-font-family: "Arial Black";
+    -fx-tick-label-fill: #373737;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+.button{
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0.8,0.8), 5, 0.79, 0, 0);
+}

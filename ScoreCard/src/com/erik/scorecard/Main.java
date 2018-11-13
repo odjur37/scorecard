@@ -15,6 +15,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setResources(ResourceBundle.getBundle("com.erik.scorecard.application"));
         Parent root = fxmlLoader.load(getClass().getResourceAsStream("mainwindow.fxml"));
+        setUserAgentStylesheet(STYLESHEET_MODENA);
         primaryStage.setTitle("ScoreCard");
         primaryStage.setScene(new Scene(root, 300, 500));
         primaryStage.show();
