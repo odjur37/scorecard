@@ -6,9 +6,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
+import java.util.HashMap;
 
 public class Controller {
-    private Hole hole;
+
+    private HashMap<Integer, Hole> holes;
+    private Hole currentHole;
 
     @FXML
     private Slider scoreSlider;
@@ -23,7 +26,12 @@ public class Controller {
 
     public void initialize(){
 
-        hole = new Hole();
+        this.holes = new HashMap<>();
+        for (int i = 1 ; i <= 18; i++){
+            holes.put(i, new Hole(i));
+        }
+        System.out.println(holes.size());
+        this.currentHole = holes.get(1);
 
         scoreSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -46,38 +54,64 @@ public class Controller {
 
     public void updateFairway(){
         if (fairwayBox.isSelected()){
-            hole.setFairway(true);
+            currentHole.setFairway(true);
         } else {
-            hole.setFairway(false);
+            currentHole.setFairway(false);
         }
         System.out.println("Updated fw: " + fairwayBox.isSelected());
     }
 
     public void updateGreen(){
         if (greenBox.isSelected()){
-            hole.setGreen(true);
+            currentHole.setGreen(true);
         } else {
-            hole.setGreen(false);
+            currentHole.setGreen(false);
         }
         System.out.println("Updated green: " + greenBox.isSelected());
     }
 
     private void updateScore(int newValue){
-        hole.setScore(newValue);
+        currentHole.setScore(newValue);
         System.out.println("Updated score: " + newValue);
     }
 
     private void updatePutts(int newValue){
-        hole.setPutts(newValue);
+        currentHole.setPutts(newValue);
         System.out.println("Updated putts: " + newValue);
     }
 
     public void updateUpnd(){
         if (upndBox.isSelected()){
-            hole.setUpnd(true);
+            currentHole.setUpnd(true);
         } else {
-            hole.setUpnd(false);
+            currentHole.setUpnd(false);
         }
-        System.out.println("Updated UPND: " + fairwayBox.isSelected());
+        System.out.println("Updated UPND: " + upndBox.isSelected());
+    }
+
+    public void nextHole(){
+        if (currentHole.getHoleNo() != 18) {
+            currentHole = holes.get(currentHole.getHoleNo() + 1);
+            updateUI();
+            System.out.println("Switched to hole " + currentHole.getHoleNo() + "!");
+        } else {
+
+        }
+    }
+
+    public void previousHole(){
+        if (currentHole.getHoleNo() != 1){
+            currentHole = holes.get(currentHole.getHoleNo() + - 1);
+            updateUI();
+            System.out.println("Switched to hole " + currentHole.getHoleNo() + "!");
+        }
+    }
+
+    public void updateUI(){
+        scoreSlider.setValue(currentHole.getScore());
+        fairwayBox.setSelected(currentHole.isFairway());
+        greenBox.setSelected(currentHole.isGreen());
+        puttSlider.setValue(currentHole.getPutts());
+        upndBox.setSelected(currentHole.isUpnd());
     }
 }

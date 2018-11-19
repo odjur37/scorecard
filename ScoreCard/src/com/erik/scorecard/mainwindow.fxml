@@ -50,7 +50,7 @@
     </HBox>
 
     <HBox GridPane.columnIndex="0" GridPane.rowIndex="5" alignment="CENTER_LEFT">
-        <Button>
+        <Button fx:id="leftButton" onAction="#previousHole">
             <graphic>
                 <ImageView>
                     <Image url="com/erik/scorecard/chevron-left.png"></Image>
@@ -62,7 +62,7 @@
         <Label id="smallText" text="HOLE X"/>
     </HBox>
     <HBox GridPane.columnIndex="2" GridPane.rowIndex="5" alignment="CENTER_RIGHT">
-        <Button>
+        <Button fx:id="rightButton" onAction="#nextHole">
             <graphic>
                 <ImageView>
                     <Image url="com/erik/scorecard/chevron-right.png"></Image>
