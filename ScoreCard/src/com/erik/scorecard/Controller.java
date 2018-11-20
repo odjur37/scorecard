@@ -7,10 +7,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Controller {
 
-    private HashMap<Integer, Hole> holes;
+    private Map<Integer, Hole> holes;
     private Hole currentHole;
 
     @FXML
